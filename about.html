@@ -56,6 +56,26 @@ section .eyebrow,.alt .eyebrow,.q .s,.trust b{color:#c20d0d}
 .steps li:before{background:#c20d0d;color:#fff}
 .brandtxt{color:#fff}.brandtxt span{color:#ff1010}
 .card{border-top:7px solid #c20d0d}
+
+.hero{position:relative;overflow:hidden}
+.lift{position:absolute;inset:0;z-index:5;pointer-events:none;animation:lgone 0s linear 2.5s forwards}
+.lift .plate{position:absolute;inset:0;background:linear-gradient(180deg,#1b1b18,#11110f 60%);border-bottom:3px solid #c20d0d;will-change:transform;animation:lup 1.15s cubic-bezier(0.76,0,0.24,1) 1.05s forwards}
+.lift .plate:before{content:"";position:absolute;inset:14% 18% 22%;border:1px solid #34342f;background:repeating-linear-gradient(90deg,transparent 0 46px,#34342f 46px 47px),repeating-linear-gradient(0deg,transparent 0 38px,#25251f 38px 39px)}
+.lift .tag{position:absolute;left:50%;bottom:12%;transform:translateX(-50%);color:#77787b;font:900 12px Arial,Helvetica,sans-serif;letter-spacing:.3em;text-transform:uppercase;white-space:nowrap}
+.lift .tag b{color:#ff1010}
+.lift .led{position:absolute;left:calc(82% - 6px);top:16%;width:12px;height:12px;border-radius:50%;background:#34342f;animation:led .2s steps(1) .85s forwards}
+.lift .arm{position:absolute;left:50%;top:0;width:190px;margin-left:-95px;transform:translateY(-100%);will-change:transform;animation:adown .75s cubic-bezier(0.16,1,0.3,1) .1s forwards}
+.lift .arm svg{display:block;width:190px;height:auto}
+.lift .jl,.lift .jr{transform-box:view-box;animation:.22s cubic-bezier(0.34,1.56,0.64,1) .78s forwards}
+.lift .jl{transform-origin:52px 150px;transform:rotate(-16deg);animation-name:jl}.lift .jr{transform-origin:68px 150px;transform:rotate(16deg);animation-name:jr}
+@keyframes adown{to{transform:translateY(0)}}
+@keyframes jl{to{transform:rotate(0)}}@keyframes jr{to{transform:rotate(0)}}
+@keyframes led{to{background:#ff1010}}
+@keyframes lup{to{transform:translateY(-104%)}}
+@keyframes lgone{to{visibility:hidden}}
+.lift .plate .arm{top:auto}
+@media(max-width:860px){.lift .plate:before{inset:16% 8% 26%}.lift .arm,.lift .arm svg{width:110px}.lift .arm{margin-left:-55px}}
+@media(prefers-reduced-motion:reduce){.lift{display:none}}
 </style></head><body><div class="demo">Unrequested concept by Postuco. Not affiliated with or approved by AMAX Electric. AMAX Electric name belongs to AMAX Electric.</div><header><div class="nav" style="position:relative"><a class="brandtxt" href="index.html">AMAX <span>Electric</span></a>
 <nav class="links" id="nl"><a href="services.html">Services</a><a href="service-areas.html">Service Areas</a><a href="projects.html">Gallery</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://www.amaxelectric.com/">Book online ↗</a><a href="tel:+14172160102">Call 417-216-0102</a></nav>
 <button class="mb" aria-label="Menu" aria-expanded="false" onclick="var n=document.getElementById('nl');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">☰</button><a class="btn hb" href="tel:+14172160102">Call 417-216-0102</a></div></header><section class="hero"><div class="w"><span class="eyebrow">About AMAX</span><h1>Family owned. <em>Straight answers.</em></h1></div></section>
