@@ -189,3 +189,25 @@ section,section.alt{padding:clamp(40px,6vw,96px) 20px;clip-path:none}
 @media(max-width:899px){.mmx .tag{display:none}}
 @media(min-width:640px) and (max-width:899px){.signs .mmx{aspect-ratio:4/5}.signs .mmx .mmi{width:46%}}
 .lift{pointer-events:none!important}.lift.done{display:none!important}
+/* v7 motion system: tokens */
+:root{--e-out:cubic-bezier(.16,1,.3,1);--e-io:cubic-bezier(.65,0,.35,1);--t-press:90ms;--t-hover:180ms;--t-in:520ms;--stag:70ms;--rise:18px}
+/* press + hover: instant press, quick hover */
+.btn{transition:background var(--t-hover) var(--e-out),color var(--t-hover) var(--e-out),transform var(--t-hover) var(--e-out),box-shadow var(--t-hover) var(--e-out)}
+.btn:active{transform:translateY(0) scale(.97)!important;transition-duration:var(--t-press)}
+.btn:focus-visible,.card:focus-visible{outline:3px solid #ff0003;outline-offset:3px}
+.card{transition:transform var(--t-hover) var(--e-out),box-shadow var(--t-hover) var(--e-out)}
+.card:active{transform:translateY(-2px) scale(.985);transition-duration:var(--t-press)}
+.card .fig img{transition:transform 480ms var(--e-out)}
+.card.oc .ar{transition:transform var(--t-hover) var(--e-out)}.card.oc:hover .ar{transform:translateX(5px)}
+nav a:not(.btn){background:linear-gradient(#ff0003,#ff0003) 0 100%/0 2px no-repeat;transition:background-size var(--t-hover) var(--e-out)}nav a:not(.btn):hover{background-size:100% 2px}
+details summary{transition:color var(--t-hover)}details[open] summary{color:#ff0003}
+@media(hover:none){.card:hover{transform:none}.card:hover .fig img{transform:none}}
+/* entrances: opacity+transform only (no layout shift), JS-gated so no-JS shows everything */
+.js .rv{opacity:0;transform:translateY(var(--rise))}
+.js .rv.in{opacity:1;transform:none;transition:opacity var(--t-in) var(--e-out),transform var(--t-in) var(--e-out);transition-delay:calc(var(--i,0) * var(--stag))}
+.js .hin>*{opacity:0;animation:hin var(--t-in) var(--e-out) forwards;animation-delay:calc(var(--hd,.08s) + var(--i,0) * 90ms)}
+.js .home .hin>*{--hd:2.25s}
+@keyframes hin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.js .trust .in>*{opacity:0;animation:hin 420ms var(--e-out) forwards;animation-delay:calc(var(--hd,.25s) + var(--i,0) * 80ms)}.js .home .trust .in>*{--hd:2.6s}
+h2:after{transform-origin:left}.js .rv h2:after,.js .rv.in h2:after{}
+@media(prefers-reduced-motion:reduce){.js .rv,.js .hin>*,.js .trust .in>*{opacity:1!important;transform:none!important;animation:none!important}.btn:active,.card:active,.card.oc:hover .ar{transform:none!important}}
