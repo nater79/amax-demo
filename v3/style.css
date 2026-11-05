@@ -187,4 +187,5 @@ section,section.alt{padding:clamp(40px,6vw,96px) 20px;clip-path:none}
 .mmx .mmi{position:relative;width:min(34%,170px);filter:drop-shadow(0 24px 30px rgba(0,0,0,.55))}.mmx svg{display:block;width:100%;height:auto;overflow:visible}
 .mmx .d0,.mmx .d1,.mmx .spark{opacity:0}
 .mmx .tag{position:absolute;left:0;right:0;bottom:7%;text-align:center;color:#77787b;font:900 12.5px Arial,Helvetica,sans-serif;letter-spacing:.3em;text-transform:uppercase}.mmx .tag b{color:#ff1010}
+@media(max-width:899px){.mmx .tag{display:none}}
 @media(min-width:640px) and (max-width:899px){.signs .mmx{aspect-ratio:4/5}.signs .mmx .mmi{width:46%}}
