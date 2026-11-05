@@ -315,7 +315,7 @@ function size() {
   renderer.setSize(w, h, false); camera.aspect = w / h;
   // frame subject off-centre: desktop pushes scene right of the copy, portrait pushes it up
   if (w > h * 1.05 && w > 900) camera.setViewOffset(w, h, -w * .17, 0, w, h);
-  else if (w <= h) camera.setViewOffset(w, h, 0, h * .17, w, h);
+  else if (w <= h) camera.setViewOffset(w, h, 0, h * .27, w, h);
   else camera.clearViewOffset();
   dirty = true;
 }
