@@ -180,3 +180,11 @@ section,section.alt{padding:clamp(40px,6vw,96px) 20px;clip-path:none}
 .two.bal{align-items:stretch}.two.bal>div{background:#11110f;color:#fff;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:center}.two.bal>div h2{color:#fff}.two.bal>div a:not(.btn){color:#fff}
 @media(max-width:1024px){.lift{display:none!important}}
 @media(max-width:860px){body{padding-bottom:calc(76px + env(safe-area-inset-bottom))}.sticky{padding-bottom:calc(10px + env(safe-area-inset-bottom))}footer{padding-bottom:50px}}
+
+/* v5 multimeter panel */
+.mmx{position:relative;aspect-ratio:4/3;background:linear-gradient(180deg,#1b1b18,#11110f 60%);border-bottom:3px solid #c20d0d;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.mmx:before{content:"";position:absolute;top:-10%;bottom:-10%;left:6%;width:18%;background:linear-gradient(90deg,#ff0003 0 40%,transparent 40% 56%,#77787b 56%);transform:skewX(-24deg);opacity:.35}
+.mmx .mmi{position:relative;width:min(34%,170px);filter:drop-shadow(0 24px 30px rgba(0,0,0,.55))}.mmx svg{display:block;width:100%;height:auto;overflow:visible}
+.mmx .d0,.mmx .d1,.mmx .spark{opacity:0}
+.mmx .tag{position:absolute;left:0;right:0;bottom:7%;text-align:center;color:#77787b;font:900 12.5px Arial,Helvetica,sans-serif;letter-spacing:.3em;text-transform:uppercase}.mmx .tag b{color:#ff1010}
+@media(min-width:640px) and (max-width:899px){.signs .mmx{aspect-ratio:4/5}.signs .mmx .mmi{width:46%}}
